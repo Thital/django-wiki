@@ -59,7 +59,7 @@ def random_page(request):
     })
 
 def edit(request, page):
-    form_content = markdown2.markdown(util.get_entry(page))
+    form_content = util.get_entry(page)
     if request.method == "POST":
         form = NewEntryForm(request.POST)
         if form.is_valid():
